@@ -1,0 +1,10 @@
+.App-abc{
+    background-color: coral;
+    height: 80px;
+    width: 90px;
+}
+
+.AYU{
+    display: flex;
+    flex-wrap: wrap;
+}
