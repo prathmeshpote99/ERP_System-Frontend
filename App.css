@@ -7,4 +7,7 @@
 .AYU{
     display: flex;
     flex-wrap: wrap;
+}.Tejaswini{
+    display: inline;
+    height: 1px;
 }
