@@ -25,13 +25,13 @@ function SignIn() {
         console.log(res.data);
         if (userType === "Admin") {
           navigate("/dashboard");
-          localStorage.setItem("email", res.data.email)
-          localStorage.setItem("password", res.data.password)
+          localStorage.setItem("email", res.data.email);
+          localStorage.setItem("password", res.data.password);
         }
         if (userType === "User") {
           navigate("/employeeDashboard");
-          localStorage.setItem("email", res.data.email)
-          localStorage.setItem("password", res.data.password)
+          localStorage.setItem("email", res.data.email);
+          localStorage.setItem("password", res.data.password);
         }
       })
       .catch((err) => console.log(err));
@@ -48,7 +48,12 @@ function SignIn() {
             data-bs-placement="right"
             title="Add New Employee"
             className="btn btn-danger"
-            style={{ width: "4%", float: "right", margin: "3%", borderRadius: "20%" }}
+            style={{
+              width: "4%",
+              float: "right",
+              margin: "3%",
+              borderRadius: "20%",
+            }}
           >
             <i
               style={{ marginRight: "8%" }}

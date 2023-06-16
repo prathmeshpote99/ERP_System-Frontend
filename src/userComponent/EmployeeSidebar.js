@@ -6,7 +6,6 @@ import axios from "axios";
 
 const EmployeeSidebar = ({ show, setShow }) => {
   const [details, setDetails] = useState("");
-  const [date, setDate] = useState("");
 
   const sumagoWebsite = () => {
     window.open("https://www.sumagoinfotech.com/", "_blank");

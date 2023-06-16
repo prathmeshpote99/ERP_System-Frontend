@@ -6,7 +6,7 @@ import axios from "axios";
 const AttendenceList = () => {
   const [show, setShow] = useState(false);
   const [data, setData] = useState([]);
-
+  // const absent_days =  30 -data.present_days ;
   useEffect(() => {
     axios
       .get("http://localhost:7080/attendenced/find")
@@ -16,6 +16,11 @@ const AttendenceList = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  const calculateAbsentDays = (presentDays) => {
+    const totalDays = 30; // Assuming a total of 30 days
+    return totalDays - presentDays;
+  };
 
   return (
     <>
@@ -28,58 +33,33 @@ const AttendenceList = () => {
         className={!show ? "col-10" : "main-content"}
         style={{ overflow: "hidden", marginLeft: "15%" }}
       >
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              <div className="card bg-default shadow">
-                <div className="card-header bg-transparent border-0">
-                  <h3 className="text-white mb-0">Attendece List</h3>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card bg-default shadow">
+                <div class="card-header bg-transparent border-0">
+                  <h3 class="text-white mb-0">Attendenced list</h3>
                 </div>
-                <div className="table-responsive">
-                  <table className="table align-items-center table-dark table-flush">
-                    <thead className="thead-dark">
+                <div class="table-responsive">
+                  <table class="table align-items-center table-dark table-flush">
+                    <thead class="thead-dark">
                       <tr>
                         <th scope="col">Full Name</th>
-                        <th scope="col">Months</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Attendence in %</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Present days</th>
+                        {/* <th scope="col">Present days</th> */}
+                        <th scope="col">Absent days</th>
                       </tr>
                     </thead>
                     {data.map((item) => {
                       return (
                         <tbody>
                           <tr>
-                            <th>{item.fullName}</th>
-                            <td>{item.months}</td>
-                            <td>{item.date}</td>
-                            <td>{item.status}</td>
-                            <td>
-                              <div className="d-flex align-items-center">
-                                <span className="mr-2">
-                                  {item.attendence_in_perc}%
-                                </span>
-                                <div>
-                                  <div className="progress">
-                                    <div
-                                      className={`progress-bar 
-                                        ${
-                                          item.attendence_in_perc < 50
-                                            ? "bg-danger"
-                                            : "bg-success"
-                                        }`}
-                                      role="progressbar"
-                                      aria-valuenow="60"
-                                      aria-valuemin="0"
-                                      aria-valuemax="100"
-                                      style={{
-                                        width: `${item.attendence_in_perc}%`,
-                                      }}
-                                    ></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </td>
+                            <td>{item.fullName}</td>
+                            <td>{item.email}</td>
+                            {/* <td>{item.attendence_in_perc}</td> */}
+                            <td>{item.present_days}</td>
+                            <td>{calculateAbsentDays(item.present_days)}</td>
                           </tr>
                         </tbody>
                       );

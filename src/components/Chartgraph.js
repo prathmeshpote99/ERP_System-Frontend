@@ -23,7 +23,7 @@ const Chartgraph = () => {
     ],
   });
   return (
-    <div style={{marginLeft:"2%"}}>
+    <div style={{ marginLeft: "2%" }}>
       <div className="row">
         <div className="col-md-6">
           <Chart
