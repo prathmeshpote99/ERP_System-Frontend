@@ -30,7 +30,18 @@ function Salaryslip() {
   const grossSalary = data?.Gross_Salary;
   const present_Days = data?.Present_day;
   const absent_days = 30 - present_Days;
-  const basic_pay = 0.6 * grossSalary;
+  const basic_pay = 0.4 * grossSalary;
+  const Hra = 0.5 * grossSalary;
+  let Conveyance_Allowance = 0;
+
+  if (basic_pay + Hra > 15000) {
+    Conveyance_Allowance = 1600;
+  } else {
+    Conveyance_Allowance = 1000;
+  }
+
+  const Other_Allowance = basic_pay + Hra + Conveyance_Allowance;
+  const totalOther = grossSalary - Other_Allowance;
 
   // const deduction =
   // parseFloat(data?.Proffesional_Tax) +
@@ -267,7 +278,7 @@ function Salaryslip() {
             </tr>
             <tr>
               <td>HRA</td>
-              <td style={{ textAlign: "center" }}>{0.2 * grossSalary}</td>
+              <td style={{ textAlign: "center" }}>{Hra}</td>
               <td>Leaves</td>
               <td style={{ textAlign: "center" }}>
                 {Math.floor(leaveDeduction)}
@@ -275,13 +286,13 @@ function Salaryslip() {
             </tr>
             <tr>
               <td>Conveyance Allowance</td>
-              <td style={{ textAlign: "center" }}>{0.1 * grossSalary}</td>
+              <td style={{ textAlign: "center" }}>{Conveyance_Allowance}</td>
               <td>Employee Contribution PF</td>
               <td style={{ textAlign: "center" }}>{Math.floor(pfDeduction)}</td>
             </tr>
             <tr>
               <td>Other Allowance</td>
-              <td style={{ textAlign: "center" }}>{0.1 * grossSalary}</td>
+              <td style={{ textAlign: "center" }}>{totalOther}</td>
               <td>Employee Contribution ESIC</td>
               <td style={{ textAlign: "center" }}>0</td>
             </tr>
