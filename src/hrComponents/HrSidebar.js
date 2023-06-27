@@ -4,7 +4,7 @@ import SumagoLogo from "../components/Images/sumago_logo_dark.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const EmployeeSidebar = ({ show, setShow }) => {
+const HrSidebar = ({ show, setShow }) => {
   const [details, setDetails] = useState("");
 
   const sumagoWebsite = () => {
@@ -80,7 +80,7 @@ const EmployeeSidebar = ({ show, setShow }) => {
 
               <div className="nav-list">
                 <Link
-                  to="/employeeDashboard"
+                  to="/hrdashboard"
                   className="nav-link active"
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
@@ -169,4 +169,4 @@ const EmployeeSidebar = ({ show, setShow }) => {
   );
 };
 
-export default EmployeeSidebar;
+export default HrSidebar;

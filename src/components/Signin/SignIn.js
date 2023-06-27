@@ -33,6 +33,11 @@ function SignIn() {
           localStorage.setItem("email", res.data.email);
           localStorage.setItem("password", res.data.password);
         }
+        if (userType === "HR") {
+          navigate("/hrdashboard");
+          localStorage.setItem("email", res.data.email);
+          localStorage.setItem("password", res.data.password);
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -125,6 +130,18 @@ function SignIn() {
                   }}
                 >
                   User
+                </button>
+              </li>
+              <li>
+                <button
+                  className="dropdown-item"
+                  type="button"
+                  onClick={() => {
+                    setUserType("HR");
+                    console.log("Selected Value: HR");
+                  }}
+                >
+                  HR
                 </button>
               </li>
             </ul>

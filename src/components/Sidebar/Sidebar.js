@@ -43,9 +43,6 @@ const Sidebar = ({ show, setShow }) => {
             title="Close"
           ></i>
         </div>
-        <span>
-          <h1>Sumago Infotech</h1>
-        </span>
         <div
           className="profile"
           style={{
