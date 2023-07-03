@@ -43,8 +43,8 @@ function SignIn() {
   };
 
   return (
-    <div>
-      <div className="row">
+    <>
+      {/* <div className="row">
         <div className="button_div" style={{ width: "100%" }}>
           <Link
             type="button"
@@ -66,9 +66,9 @@ function SignIn() {
             ></i>
           </Link>
         </div>
-      </div>
+      </div> */}
 
-      <div className="wrapper">
+      <div className="wrapper" style={{ marginTop: "10%" }}>
         <div className="text-center mb-4 name">Signin</div>
         <form onSubmit={onSubmit}>
           <div className="form-field d-flex align-items-center">
@@ -125,11 +125,11 @@ function SignIn() {
                   className="dropdown-item"
                   type="button"
                   onClick={() => {
-                    setUserType("User");
-                    console.log("Selected Value: User");
+                    setUserType("HR");
+                    console.log("Selected Value: HR");
                   }}
                 >
-                  User
+                  HR
                 </button>
               </li>
               <li>
@@ -137,11 +137,11 @@ function SignIn() {
                   className="dropdown-item"
                   type="button"
                   onClick={() => {
-                    setUserType("HR");
-                    console.log("Selected Value: HR");
+                    setUserType("User");
+                    console.log("Selected Value: User");
                   }}
                 >
-                  HR
+                  User
                 </button>
               </li>
             </ul>
@@ -156,7 +156,7 @@ function SignIn() {
           <Link to="/addadmin">Sign up</Link> */}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

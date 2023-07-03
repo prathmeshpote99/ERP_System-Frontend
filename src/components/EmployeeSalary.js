@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Sidebar from "./Sidebar/Sidebar";
+import HrSidebar from "../hrComponents/HrSidebar";
 import axios from "axios";
 
 function EmployeeSalary() {
@@ -69,7 +69,7 @@ function EmployeeSalary() {
       <div>
         <div className="row">
           <div className="col-2">
-            <Sidebar show={show} setShow={setShow} />
+            <HrSidebar show={show} setShow={setShow} />
           </div>
 
           <div
@@ -163,6 +163,7 @@ function EmployeeSalary() {
                     class="form-control"
                     id="salary"
                     name="Present day"
+                    required
                     placeholder="Enter your Present day"
                     value={Present_day}
                     onChange={(event) => {
@@ -356,17 +357,18 @@ function EmployeeSalary() {
               </div>
 
               {/* <div className="form-group col-md-6">
-    <label for="currency">Currency:</label>
-    <select class="form-control" id="currency" name="currency">
-      <option value="usd">USD</option>
-      <option value="eur">EUR</option>
-      <option value="gbp">GBP</option>
-    </select>
-  </div> */}
-
-              <button type="submit" class="btn btn-primary mt-2">
-                Submit
-              </button>
+                <label for="currency">Currency:</label>
+                  <select class="form-control" id="currency" name="currency">
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                    <option value="gbp">GBP</option>
+                  </select>
+              </div> */}
+              <div className="button mt-5" style={{ textAlign: "center" }}>
+                <button type="submit" class="btn btn-primary mt-2">
+                  Submit
+                </button>
+              </div>
             </form>
           </div>
         </div>

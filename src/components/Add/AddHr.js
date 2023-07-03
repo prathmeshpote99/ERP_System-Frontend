@@ -5,7 +5,7 @@ import "./AddNewAdmin.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function AddNewAdmin() {
+const AddHr = () => {
   const [show, setShow] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState();
   const [isValid, setIsValid] = useState(true);
@@ -27,14 +27,14 @@ function AddNewAdmin() {
       contact: phoneNumber,
       fName: fName,
       lName: lName,
-      userType: "Admin",
+      userType: "HR",
     };
     axios
-      .post("http://localhost:7080/erp/add", newData)
+      .post("http://localhost:7080/hr/add", newData)
       .then((res) => {
         console.log(res.data);
         navigate("/");
-        alert(`Congrats...! ${fName} you are Admin now`);
+        alert(`Congrats...! ${fName} you are HR now`);
       })
       .catch((err) => console.log(err));
     if (isValid) {
@@ -64,20 +64,20 @@ function AddNewAdmin() {
       </div>
       <div className="wrapper1 mt-5">
         {/* <div className="logo">
-          <img className="logo1" src={logo} alt="" />
-        </div> */}
-        <div className="text-center mt-4 name">ADD NEW ADMIN</div>
+        <img className="logo1" src={logo} alt="" />
+      </div> */}
+        <div className="text-center mt-4 name">ADD NEW HR</div>
         <form className="p-3" onSubmit={onSubmit}>
           {/* <div className="form-field d-flex align-items-center">
-            <span className="far fa-user"></span>
-            <input
-              type="text"
-              name="userName"
-              id="userName"
-              placeholder="Username"
-              required
-            />
-          </div> */}
+          <span className="far fa-user"></span>
+          <input
+            type="text"
+            name="userName"
+            id="userName"
+            placeholder="Username"
+            required
+          />
+        </div> */}
           <div className="form-field d-flex align-items-center">
             <span className="fa-solid fa-envelope"></span>
             <input
@@ -144,17 +144,17 @@ function AddNewAdmin() {
             </p>
           )}
           <button type="submit" className="btn mt-3">
-            Add Admin
+            Add HR
           </button>
         </form>
         <div className="text-center fs-6">
-          <Link to="/addemployee">
-            Add Employee <i className="fa-solid fa-arrow-right" />
+          <Link to="/addadmin">
+            Add Admin <i className="fa-solid fa-arrow-right" />
           </Link>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default AddNewAdmin;
+export default AddHr;

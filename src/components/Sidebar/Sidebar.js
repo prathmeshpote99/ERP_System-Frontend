@@ -126,24 +126,14 @@ const Sidebar = ({ show, setShow }) => {
                 <span className="nav-link-name">Attendence List</span>
               </Link>
               <Link
-                to="/salaryslip"
+                to="/addemployee"
                 className="nav-link"
                 data-bs-toggle="tooltip"
                 data-bs-placement="right"
-                title="Employee's Salary"
-              >
-                <i className="fas fa-solid fa-receipt"></i>
-                <span className="nav-link-name">Employee's Salary</span>
-              </Link>
-              <Link
-                to="/addadmin"
-                className="nav-link"
-                data-bs-toggle="tooltip"
-                data-bs-placement="right"
-                title="Add New Admin"
+                title="Add New Employee"
               >
                 <i className="fas fa-solid fa-user-plus"></i>
-                <span className="nav-link-name">Add New Admin</span>
+                <span className="nav-link-name">Add New Employee</span>
               </Link>
               {/* <Link
                 to="/"

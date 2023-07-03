@@ -34,8 +34,8 @@ const ComplaintList = () => {
         </div>
       </div>
       <div
-        className={!show ? "col-9" : "container"}
-        style={{ overflow: "hidden", marginLeft: "15%" }}
+        className={!show ? "container" : "col-10"}
+        style={{ overflow: "hidden", marginLeft: "16%", paddingLeft: "2%" }}
       >
         <div className="row">
           <div className="col-md-offset-1 col-md-10">

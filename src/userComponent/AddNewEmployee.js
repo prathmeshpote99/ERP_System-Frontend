@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../userComponent/AddNewEmployee.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 const AddNewEmployee = () => {
   const [isValid, setIsValid] = useState(true);
@@ -12,6 +13,7 @@ const AddNewEmployee = () => {
   const [jobTitle, setJobTitle] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState();
+  const [show, setShow] = useState(false);
 
   const navigate = useNavigate();
 
@@ -59,11 +61,13 @@ const AddNewEmployee = () => {
   return (
     <>
       <div>
-        {/* <div className="row">
-        <div className="col-4">
-          <Sidebar show={show} setShow={setShow} />
+        <div className="row">
+          <div>
+            <div className="col-4">
+              <Sidebar show={show} setShow={setShow} />
+            </div>
+          </div>
         </div>
-      </div> */}
         <div className="wrapper1 mt-5">
           {/* <div className="logo">
           <img className="logo1" src={logo} alt="" />
@@ -175,9 +179,9 @@ const AddNewEmployee = () => {
               Add Me
             </button>
           </form>
-          {/* <div className="text-center fs-6">
-          <Link to="/">Forget password?</Link> or <Link to="/">Sign up</Link>
-        </div> */}
+          <div className="text-center fs-6">
+          <Link to="/addhr">Add HR <i className="fa-solid fa-arrow-right"/></Link>
+        </div>
         </div>
       </div>
     </>

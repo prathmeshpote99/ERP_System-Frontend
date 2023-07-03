@@ -15,7 +15,7 @@ const HrSidebar = ({ show, setShow }) => {
     let newData = { email: localStorage.getItem("email") };
 
     axios
-      .post("http://localhost:7080/details/user", newData)
+      .post("http://localhost:7080/details/hr", newData)
       .then((res) => {
         console.log(res.data);
         setDetails(res.data);
@@ -61,7 +61,7 @@ const HrSidebar = ({ show, setShow }) => {
           <nav className="nav">
             <div>
               <Link
-                to="/employeeDashboard"
+                to="/hrdashboard"
                 onClick={sumagoWebsite}
                 className="nav-logo"
               >
@@ -89,27 +89,37 @@ const HrSidebar = ({ show, setShow }) => {
                   <i className="fas fa-tachometer-alt nav-link-icon"></i>
                   <span className="nav-link-name">Dashboard</span>
                 </Link>
-                <Link
-                  to="/leaverequest"
+                {/* <Link
+                  to="/payscale"
                   className="nav-link"
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
-                  title="Leave Request"
+                  title="Employee Pay Scale"
                 >
                   <i className="fas fa-solid fa-user-clock"></i>
-                  <span className="nav-link-name">Leave Request</span>
-                </Link>
+                  <span className="nav-link-name">Employee Pay Scale</span>
+                </Link> */}
                 <Link
-                  to="/EmployeeComplaintFrom"
+                  to="/salaryslip"
                   className="nav-link"
                   data-bs-toggle="tooltip"
                   data-bs-placement="right"
-                  title="Complaint Form"
+                  title="Employee's Salary"
                 >
-                  <i className="fas fa-solid fa-user-pen"></i>
-                  <span className="nav-link-name">Complaint Form</span>
+                  <i className="fas fa-solid fa-receipt"></i>
+                  <span className="nav-link-name">Employee's Salary</span>
                 </Link>
-                <Link
+                {/* <Link
+                  to="/addemployee"
+                  className="nav-link"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="right"
+                  title="Add New Employee"
+                >
+                  <i className="fas fa-solid fa-user-plus"></i>
+                  <span className="nav-link-name">Add New Employee</span>
+                </Link> */}
+                {/* <Link
                   to="/attendencesheet"
                   className="nav-link"
                   data-bs-toggle="tooltip"
@@ -138,7 +148,7 @@ const HrSidebar = ({ show, setShow }) => {
                 >
                   <i className="fas fa-solid fa-receipt"></i>
                   <span className="nav-link-name">Salary Slip</span>
-                </Link>
+                </Link> */}
                 {/* <Link
                 to="/"
                 className="nav-link"

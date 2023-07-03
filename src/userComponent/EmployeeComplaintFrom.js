@@ -30,7 +30,7 @@ const EmployeeComplaintFrom = () => {
       <div
         id="root"
         className={!show ? "col-9" : "container"}
-        style={{ overflow: "hidden", marginLeft: "15%" }}
+        style={{ overflow: "hidden", marginLeft: "15%", paddingLeft: "3%" }}
       >
         <div style={{ textAlign: "center" }} className="heading mt-5">
           <h1>Complaint Form</h1>

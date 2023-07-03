@@ -6,6 +6,18 @@ import axios from "axios";
 const LeaveRequestList = () => {
   const [show, setShow] = useState(false);
   const [data, setData] = useState([]);
+  const [isApproved, setIsApproved] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let addData = { isApproved, email };
+    console.log("msg:", isApproved);
+    axios
+      .post("http://localhost:7080/approval/add", addData)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
     axios
@@ -35,26 +47,52 @@ const LeaveRequestList = () => {
                 <h1>Leave Requests List</h1>
               </div>
               <div className="table-responsive mt-5">
-                <table className="table user-list">
-                  <thead>
-                    <tr>
-                      <th>Full Name</th>
-                      <th>Reason of Leave</th>
-                      <th>Date of Leave</th>
-                    </tr>
-                  </thead>
-                  {data.map((item) => {
-                    return (
-                      <tbody>
-                        <tr>
-                          <td>{item.fullName}</td>
-                          <td>{item.reason}</td>
-                          <td>{item.leaveDate}</td>
-                        </tr>
-                      </tbody>
-                    );
-                  })}
-                </table>
+                <form onClick={handleSubmit}>
+                  <table className="table user-list">
+                    <thead>
+                      <tr>
+                        <th>Full Name</th>
+                        <th>Reason of Leave</th>
+                        <th>Date of Leave</th>
+                        <th>Email</th>
+                        <th>Approved / Reject</th>
+                      </tr>
+                    </thead>
+                    {data.map((item, index) => {
+                      return (
+                        <tbody>
+                          <tr>
+                            <td>{item.fullName}</td>
+                            <td>{item.reason}</td>
+                            <td>{item.leaveDate}</td>
+                            <td>{item.email}</td>
+                            <td>
+                              <button
+                                className="btn btn-primary"
+                                onClick={() => {
+                                  setEmail(item.email);
+                                  setIsApproved(true);
+                                }}
+                              >
+                                Approve <i class="fa-solid fa-check"></i>
+                              </button>
+                              <button
+                                className="btn btn-danger"
+                                style={{ marginLeft: "10%" }}
+                                onClick={() => {
+                                  setEmail(item.email);
+                                  setIsApproved(false, "Reject");
+                                }}
+                              >
+                                Reject <i class="fa-solid fa-trash"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      );
+                    })}
+                  </table>
+                </form>
               </div>
             </div>
           </div>

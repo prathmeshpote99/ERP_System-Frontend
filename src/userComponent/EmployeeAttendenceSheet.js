@@ -35,7 +35,7 @@ const EmployeeAttendenceSheet = () => {
         <div
           id="root"
           className={!show ? "col-9" : "container"}
-          style={{ overflow: "hidden", marginLeft: "15%" }}
+          style={{ overflow: "hidden", marginLeft: "15%", paddingLeft: "3%" }}
         >
           <div className="heading mt-5" style={{ textAlign: "center" }}>
             <h1>Attendance Sheet</h1>

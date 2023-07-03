@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./Salaryslip.css";
 import EmployeeSidebar from "./EmployeeSidebar";
 import axios from "axios";
 // import logo1 from "../Images/sumago_logo_dark2.png";
 import logo1 from "../components/Images/images1.png";
+import html2canvas from "html2canvas";
+import { saveAs } from "file-saver";
 
 function Salaryslip() {
+  const pageRef = useRef();
   const [show, setShow] = useState(false);
   const [data, setData] = useState("");
 
@@ -29,7 +32,7 @@ function Salaryslip() {
 
   const grossSalary = data?.Gross_Salary;
   const present_Days = data?.Present_day;
-  const absent_days = 30 - present_Days;
+  const absent_days = 29 - present_Days;
   const basic_pay = 0.4 * grossSalary;
   const Hra = 0.5 * grossSalary;
   let Conveyance_Allowance = 0;
@@ -50,8 +53,17 @@ function Salaryslip() {
   // parseFloat(data?.Employee_contribution_ESIC);
   // const total = grossSalary - deduction;
 
-  const leaveDeductionRate = grossSalary / 30; // Assuming the leave deduction rate is 0.5%
-  const leaveDeduction = absent_days * leaveDeductionRate;
+  // const leaveDeductionRate = grossSalary / 30;
+  // const leaveDeduction = absent_days * leaveDeductionRate;
+
+  let leaveDeduction = 0;
+  if (absent_days === 1) {
+    leaveDeduction = (grossSalary / 30 ) * absent_days;
+  } else if (absent_days > 1) {
+    leaveDeduction = (grossSalary / 30) * absent_days;
+  } else {
+    leaveDeduction = 0;
+  }
 
   const pfDeduction = basic_pay * 0.12;
 
@@ -106,6 +118,18 @@ function Salaryslip() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleDownload = useCallback(() => {
+    // const { document } = window;
+
+    html2canvas(pageRef.current).then((canvas) => {
+      // Convert canvas to base64 image
+      const base64Image = canvas.toDataURL("image/jpg");
+
+      // Trigger file download
+      saveAs(base64Image, "SalarySlip.jpg");
+    });
+  }, []);
+
   return (
     <div>
       <div>
@@ -115,7 +139,7 @@ function Salaryslip() {
       </div>
       <div
         className={!show ? "col-9" : "container"}
-        style={{ overflow: "hidden", marginLeft: "15%" }}
+        style={{ overflow: "hidden", marginLeft: "15%", paddingLeft: "3%" }}
       >
         {/* <div class="row">
         <div class="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
@@ -220,7 +244,10 @@ function Salaryslip() {
           </div>
         </div>
       </div> */}
-        <table class="table table-bordered col-xs-10 col-sm-10 col-md-6">
+        <table
+          ref={pageRef}
+          class="table table-bordered col-xs-10 col-sm-10 col-md-6"
+        >
           <thead>
             <tr>
               <th colspan="4" style={{ textAlign: "center" }}>
@@ -320,6 +347,11 @@ function Salaryslip() {
             </tr>
           </tbody>
         </table>
+        <div style={{ textAlign: "center", marginBottom: "5%" }}>
+          <button onClick={handleDownload} className="btn btn-primary">
+            Download Slip <i className="fa-solid fa-download" />
+          </button>
+        </div>
       </div>
     </div>
   );

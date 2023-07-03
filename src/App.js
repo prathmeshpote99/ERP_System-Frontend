@@ -16,7 +16,9 @@ import LeaveRequestList from "./components/Leave/LeaveRequestList";
 import FeedbackForm from "./userComponent/FeedbackForm";
 import EmployeeSalary from "./components/EmployeeSalary";
 import Salaryslip from "./userComponent/Salaryslip";
-import HrDashboard from "./hrComponents/HrDashboard"
+import HrDashboard from "./hrComponents/HrDashboard";
+import PresentDays from "./hrComponents/PresentDays";
+import AddHr from "./components/Add/AddHr";
 
 function App() {
   return (
@@ -42,7 +44,9 @@ function App() {
         <Route path="/feedbackform" element={<FeedbackForm />} />
         <Route path="/salaryslip" element={<EmployeeSalary />} />
         <Route path="/employeesalaryslip" element={<Salaryslip />} />
-        <Route path="/hrdashboard" element={<HrDashboard />}/>
+        <Route path="/hrdashboard" element={<HrDashboard />} />
+        <Route path="/presentdays" element={<PresentDays />} />
+        <Route path="/addhr" element={<AddHr />} />
       </Routes>
     </BrowserRouter>
   );
