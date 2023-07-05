@@ -33,16 +33,16 @@ const AttendenceList = () => {
         className={!show ? "col-10" : "main-content"}
         style={{ overflow: "hidden", marginLeft: "15%" }}
       >
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="card bg-default shadow">
-                <div class="card-header bg-transparent border-0">
-                  <h3 class="text-white mb-0">Attendenced list</h3>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <div className="card bg-default shadow">
+                <div className="card-header bg-transparent border-0">
+                  <h3 className="text-white mb-0">Attendenced list</h3>
                 </div>
-                <div class="table-responsive">
-                  <table class="table align-items-center table-dark table-flush">
-                    <thead class="thead-dark">
+                <div className="table-responsive">
+                  <table className="table align-items-center table-dark table-flush">
+                    <thead className="thead-dark">
                       <tr>
                         <th scope="col">Full Name</th>
                         <th scope="col">Email</th>

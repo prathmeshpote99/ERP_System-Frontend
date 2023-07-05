@@ -63,11 +63,11 @@ const EmployeeLeaveRequest = () => {
               onChange={(e) => setFullName(e.target.value)}
             />
           </div>
-          <div class="form-group mt-4">
+          <div className="form-group mt-4">
             <label for="inputField">Email:</label>
             <input
               type="email"
-              class="form-control"
+              className="form-control"
               id="inputField"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -105,7 +105,7 @@ const EmployeeLeaveRequest = () => {
             </button>
           </div>
         </form>
-        <table class="table user-list table-striped">
+        <table className="table user-list table-striped">
           <thead>
             <tr>
               <th>Email</th>

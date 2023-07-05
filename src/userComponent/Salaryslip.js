@@ -141,8 +141,8 @@ function Salaryslip() {
         className={!show ? "col-9" : "container"}
         style={{ overflow: "hidden", marginLeft: "15%", paddingLeft: "3%" }}
       >
-        {/* <div class="row">
-        <div class="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+        {/* <div className="row">
+        <div className="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
           <div className="salary_logo">
             <img
               className="nav1-user-icon"
@@ -166,12 +166,12 @@ function Salaryslip() {
               </h1>
             </span>
           </div>
-          <div class="row">
-            <div class="receipt-header">
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="receipt-left">
+          <div className="row">
+            <div className="receipt-header">
+              <div className="col-xs-6 col-sm-6 col-md-6">
+                <div className="receipt-left">
                   <img
-                    class="img-responsive"
+                    className="img-responsive"
                     alt="iamgurdeeposahan"
                     src="https://bootdey.com/img/Content/avatar/avatar7.png"
                     style={{ width: "71px", borderRadius: "43px" }}
@@ -181,10 +181,10 @@ function Salaryslip() {
             </div>
           </div>
 
-          <div class="row">
-            <div class="receipt-header receipt-header-mid">
-              <div class="col-xs-8 col-sm-8 col-md-8 text-left">
-                <div class="receipt-right">
+          <div className="row">
+            <div className="receipt-header receipt-header-mid">
+              <div className="col-xs-8 col-sm-8 col-md-8 text-left">
+                <div className="receipt-right">
                   <h5>{data?.fName} </h5>
                   <p>
                     <b>Email :</b> {data?.email}
@@ -195,7 +195,7 @@ function Salaryslip() {
           </div>
 
           <div>
-            <table class="table table-bordered">
+            <table className="table table-bordered">
               <thead>
                 <tr>
                   <th>Description</th>
@@ -204,7 +204,7 @@ function Salaryslip() {
               </thead>
               <tbody>
                 <tr>
-                  <td class="text-right">
+                  <td className="text-right">
                     <p>
                       <strong>Salary: </strong>
                     </p>
@@ -215,26 +215,26 @@ function Salaryslip() {
                   <td>
                     <p>
                       <strong>
-                        <i class="fa fa-inr"></i> {data?.salary}
+                        <i className="fa fa-inr"></i> {data?.salary}
                       </strong>
                     </p>
                     <p>
                       <strong>
-                        <i class="fa fa-inr"></i> {data?.tax}
+                        <i className="fa fa-inr"></i> {data?.tax}
                       </strong>
                     </p>
                   </td>
                 </tr>
                 <tr>
-                  <td class="text-right">
+                  <td className="text-right">
                     <h2>
                       <strong>Total: </strong>
                     </h2>
                   </td>
-                  <td class="text-left text-danger">
+                  <td className="text-left text-danger">
                     <h2>
                       <strong>
-                        <i class="fa fa-inr"></i> {data?.salary - data?.tax}
+                        <i className="fa fa-inr"></i> {data?.salary - data?.tax}
                       </strong>
                     </h2>
                   </td>
@@ -246,7 +246,7 @@ function Salaryslip() {
       </div> */}
         <table
           ref={pageRef}
-          class="table table-bordered col-xs-10 col-sm-10 col-md-6"
+          className="table table-bordered col-xs-10 col-sm-10 col-md-6"
         >
           <thead>
             <tr>

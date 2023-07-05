@@ -74,7 +74,7 @@ const LeaveRequestList = () => {
                                   setIsApproved(true);
                                 }}
                               >
-                                Approve <i class="fa-solid fa-check"></i>
+                                Approve <i className="fa-solid fa-check"></i>
                               </button>
                               <button
                                 className="btn btn-danger"
@@ -84,7 +84,7 @@ const LeaveRequestList = () => {
                                   setIsApproved(false, "Reject");
                                 }}
                               >
-                                Reject <i class="fa-solid fa-trash"></i>
+                                Reject <i className="fa-solid fa-trash"></i>
                               </button>
                             </td>
                           </tr>

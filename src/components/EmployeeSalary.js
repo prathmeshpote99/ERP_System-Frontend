@@ -86,7 +86,7 @@ function EmployeeSalary() {
                   <label for="salary">Employee:</label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="salary"
                     name="Employee"
                     placeholder="Enter your Employee"
@@ -100,7 +100,7 @@ function EmployeeSalary() {
                   <label for="salary">Date of joining:</label>
                   <input
                     type="date"
-                    class="form-control"
+                    className="form-control"
                     id="salary"
                     name="Date of joining"
                     value={Date_of_joining}
@@ -111,12 +111,12 @@ function EmployeeSalary() {
                   />
                 </div>
               </div>
-              <div class="row">
+              <div className="row">
                 <div className="form-group col-md-6">
                   <label for="salary">Department:</label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="salary"
                     name="Department"
                     placeholder="Enter your Department"
@@ -130,7 +130,7 @@ function EmployeeSalary() {
                   <label for="salary">Employee code:</label>
                   <input
                     type="number"
-                    class="form-control"
+                    className="form-control"
                     id="salary"
                     name="Employee code"
                     placeholder="Enter your Employee code"
@@ -141,12 +141,12 @@ function EmployeeSalary() {
                   />
                 </div>
               </div>
-              <div class="row">
+              <div className="row">
                 <div className="form-group col-md-6">
                   <label for="salary">Designation:</label>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="salary"
                     name="Designation"
                     placeholder="Enter your Designation"
@@ -160,7 +160,7 @@ function EmployeeSalary() {
                   <label for="salary">Present day:</label>
                   <input
                     type="number"
-                    class="form-control"
+                    className="form-control"
                     id="salary"
                     name="Present day"
                     required
@@ -172,12 +172,12 @@ function EmployeeSalary() {
                   />
                 </div>
               </div>
-              <div class="row">
+              <div className="row">
                 <div className="form-group col-md-6">
                   <label for="salary">Back Acc no:</label>
                   <input
                     type="number"
-                    class="form-control"
+                    className="form-control"
                     id="salary"
                     name="Back_Acc_no"
                     placeholder="Enter your Back_Acc_no"
@@ -191,7 +191,7 @@ function EmployeeSalary() {
                 <label for="salary">Absent days:</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="salary"
                   name="Absent_days"
                   placeholder="Enter your Absent_days"
@@ -206,7 +206,7 @@ function EmployeeSalary() {
                   <label for="salary">Gross_Salary:</label>
                   <input
                     type="number"
-                    class="form-control"
+                    className="form-control"
                     id="salary"
                     name="Gross_Salary"
                     placeholder="Enter your Gross_Salary"
@@ -217,12 +217,12 @@ function EmployeeSalary() {
                   />
                 </div>
               </div>
-              {/* <div class="row">
+              {/* <div className="row">
               <div className="form-group col-md-6">
                 <label for="salary"> Basic pay:</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="salary"
                   name=" Basic_pay"
                   placeholder="Enter your  Basic_pay"
@@ -236,7 +236,7 @@ function EmployeeSalary() {
                 <label for="salary">Proffesional Tax:</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="salary"
                   name="Proffesional_Tax"
                   placeholder="Enter your Proffesional_Tax"
@@ -247,12 +247,12 @@ function EmployeeSalary() {
                 />
               </div>
             </div> */}
-              {/* <div class="row">
+              {/* <div className="row">
               <div className="form-group col-md-6">
                 <label for="salary"> HRA:</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="salary"
                   name=" HRA"
                   placeholder="Enter your HRA"
@@ -266,7 +266,7 @@ function EmployeeSalary() {
                 <label for="salary">Leaves:</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="salary"
                   name="Leaves"
                   placeholder="Enter your Leaves"
@@ -277,12 +277,12 @@ function EmployeeSalary() {
                 />
               </div>
             </div> */}
-              {/* <div class="row">
+              {/* <div className="row">
               <div className="form-group col-md-6">
                 <label for="salary">Converience_alloyarce:</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="salary"
                   name="Converience_alloyarce"
                   placeholder="Enter your Converience_alloyarce"
@@ -296,7 +296,7 @@ function EmployeeSalary() {
                 <label for="salary">other_alloyarce:</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="salary"
                   name="other_alloyarce"
                   placeholder="Enter your other_alloyarce"
@@ -308,12 +308,12 @@ function EmployeeSalary() {
               </div>
              
             </div> */}
-              {/* <div class="row">
+              {/* <div className="row">
               <div className="form-group col-md-6">
                 <label for="salary">Employee_contribution_ESIC:</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="salary"
                   name="Employee contribution ESIC"
                   placeholder="Enter your Employee contribution ESIC"
@@ -327,7 +327,7 @@ function EmployeeSalary() {
                 <label for="salary">Employee_contribution_PF:</label>
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="salary"
                   name="Employee contribution PF"
                   placeholder="Enter your Employee contribution PF"
@@ -344,7 +344,7 @@ function EmployeeSalary() {
                   <label for="salary">Email:</label>
                   <input
                     type="Email"
-                    class="form-control"
+                    className="form-control"
                     id="salary"
                     name="Deduction"
                     placeholder="Enter your email"
@@ -358,14 +358,14 @@ function EmployeeSalary() {
 
               {/* <div className="form-group col-md-6">
                 <label for="currency">Currency:</label>
-                  <select class="form-control" id="currency" name="currency">
+                  <select className="form-control" id="currency" name="currency">
                     <option value="usd">USD</option>
                     <option value="eur">EUR</option>
                     <option value="gbp">GBP</option>
                   </select>
               </div> */}
               <div className="button mt-5" style={{ textAlign: "center" }}>
-                <button type="submit" class="btn btn-primary mt-2">
+                <button type="submit" className="btn btn-primary mt-2">
                   Submit
                 </button>
               </div>
